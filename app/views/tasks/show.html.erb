@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="col-xs-12">
+    <div>
+      <%= @task.title %>
+      <%= link_to edit_task_path(params[:id]) do %>
+      <% end %>
+      <%= link_to task_path(params[:id]),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+    <!-- details -->
+    <div class="details">
+      <%= @task.details %>
+    </div>
+    <div class="backlink">
+      <%= link_to 'Back to Checklist', tasks_path %>
+    </div>
+  </div>
+</div>
